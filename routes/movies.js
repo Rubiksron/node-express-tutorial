@@ -57,7 +57,7 @@ async function getMovie(req, res, next) {
   try {
     movie = await Movie.findById(req.params.id);
     if (movie == null) {
-      return res.status(404), json({ message: 'Cannot find movie.' });
+      return res.status(404).json({ message: 'Cannot find movie.' });
     }
   } catch (err) {
     return res.status(500).json({ message: 'The ID selected was not found.' });
