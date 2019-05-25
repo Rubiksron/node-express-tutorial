@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
 router.delete('/:id', getMovie, async (req, res) => {
   try {
     await res.movie.remove();
-    res.json({ message: 'deleted movie.' });
+    res.json({ message: `deleted: ${res.movie.movieTitle}` });
   } catch (err) {
     res.status(500).json({ message: 'could not find movie.' });
   }
