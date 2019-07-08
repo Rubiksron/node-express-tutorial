@@ -64,7 +64,7 @@ function deletePost(event) {
   }
   const URL = `/movies/${movieId}`;
 
-  fetch(URL, options)
+  return fetch(URL, options)
   .then(response => response.json())
   .then(data => console.log('movie to delete: ', data))
 }
@@ -94,39 +94,3 @@ function putPost(event) {
   .then(response => response.json())
   .then(data => console.log('movie to update: ', data))
 }
-
-
-
-
-
-
-
-
-
-
-
-// var putButton = document.getElementById('user_form_put');
-// putButton.addEventListener('submit', putPost)
-//
-// function putPost(event) {
-//   event.preventDefault();
-//   var movieTitle = event.target.movieTitle.value;
-//   var movieDirector = event.target.movieDirector.value;
-//   var movieId = event.target.movieId.value;
-//
-//   post = {
-//     movieTitle: movieTitle,
-//     movieDirector: movieDirector
-//   }
-//   console.log('post', post);
-//   const options = {
-//     method: 'PATCH',
-//     body: JSON.stringify(post),
-//     headers: new Headers({
-//       'Content-Type': 'application/json'
-//     })
-//   }
-//   return fetch(`/movies/${movieId}`, options)
-//   .then(response => response.json())
-//   .then(data => console.log('movie to update: ', data))
-// }
